@@ -48,6 +48,7 @@ public class CacheConfiguration {
             createCache(cm, com.qc.aggrid.domain.User.class.getName());
             createCache(cm, com.qc.aggrid.domain.Authority.class.getName());
             createCache(cm, com.qc.aggrid.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.qc.aggrid.domain.Device.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
