@@ -12,6 +12,11 @@ import { EntityArrayResponseType, DeviceService } from '../service/device.servic
 import { DeviceDeleteDialogComponent } from '../delete/device-delete-dialog.component';
 import { FilterOptions, IFilterOptions, IFilterOption } from 'app/shared/filter/filter.model';
 
+import { ColDef } from 'ag-grid-community';
+
+import 'ag-grid-community/styles/ag-grid.css';
+import 'ag-grid-community/styles/ag-theme-quartz.css';
+
 @Component({
   selector: 'jhi-device',
   templateUrl: './device.component.html',
@@ -149,4 +154,42 @@ export class DeviceComponent implements OnInit {
       return [predicate + ',' + ascendingQueryParam];
     }
   }
+
+  // colDefs: ColDef[] = [
+  //   {
+  //     field: 'group',
+  //     width: 150,
+  //     checkboxSelection: true,
+  //   },
+  //   {
+  //     field: 'text',
+  //     width: 130,
+  //   },
+  //   {
+  //     field: 'date',
+  //     width: 225,
+  //   },
+  //   {
+  //     field: 'dateTime',
+  //   },
+  //   {
+  //     field: 'description',
+  //     width: 130,
+  //   },
+  //   {
+  //     field: 'check',
+  //     width: 120,
+  //   }
+  // ];
+
+  themeClass = 'ag-theme-quartz';
+
+  rowData = [
+    { make: 'Tesla', model: 'Model Y', price: 64950, electric: true },
+    { make: 'Ford', model: 'F-Series', price: 33850, electric: false },
+    { make: 'Toyota', model: 'Corolla', price: 29600, electric: false },
+  ];
+
+  // Column Definitions: Defines & controls grid columns.
+  colDefs: ColDef[] = [{ field: 'make' }, { field: 'model' }, { field: 'price' }, { field: 'electric' }];
 }

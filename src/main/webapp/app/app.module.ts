@@ -26,6 +26,11 @@ import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
 import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
 
+import { AgGridAngular, AgGridModule } from 'ag-grid-angular';
+
+import 'ag-grid-community';
+import 'ag-grid-enterprise';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -38,6 +43,8 @@ import { ErrorComponent } from './layouts/error/error.component';
     HttpClientModule,
     NgxWebstorageModule.forRoot({ prefix: 'jhi', separator: '-', caseSensitive: true }),
     TranslationModule,
+    AgGridAngular,
+    AgGridModule,
   ],
   providers: [
     Title,

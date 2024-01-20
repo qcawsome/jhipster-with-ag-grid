@@ -6,8 +6,10 @@ import { DeviceUpdateComponent } from './update/device-update.component';
 import { DeviceDeleteDialogComponent } from './delete/device-delete-dialog.component';
 import { DeviceRoutingModule } from './route/device-routing.module';
 
+import { AgGridAngular, AgGridModule } from 'ag-grid-angular';
+
 @NgModule({
-  imports: [SharedModule, DeviceRoutingModule],
+  imports: [SharedModule, DeviceRoutingModule, AgGridAngular, AgGridModule],
   declarations: [DeviceComponent, DeviceDetailComponent, DeviceUpdateComponent, DeviceDeleteDialogComponent],
 })
 export class DeviceModule {}

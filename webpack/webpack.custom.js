@@ -131,10 +131,14 @@ module.exports = async (config, options, targetOptions) => {
     })
   );
 
+  config.module.rules.push({
+    test: /\.css$/,
+    use: ['style-loader', 'css-loader'],
+  });
+
   config = merge(
     config
     // jhipster-needle-add-webpack-config - JHipster will add custom config
   );
-
   return config;
 };
